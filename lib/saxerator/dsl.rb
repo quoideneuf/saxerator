@@ -6,7 +6,7 @@ module Saxerator
 
     def for_tags(tags)
       raise ArgumentError.new('#for_tags requires an Array argument') unless tags.is_a? Array
-      specify Latches::ForTags.new(tags.map(&:to_s))
+      specify Latches::ForTags.new(tags.map(&:to_s), @config.ignore_namespaces?)
     end
 
     def at_depth(depth)
